@@ -33,9 +33,10 @@ This repository contains the complete research report and the audiovisual eviden
 * [**Full Report in English**](informe/Reporte_LLM_FineTuning_Sere_Wannaz_EN.pdf)
 * [**Full Report in Spanish**](informe/Reporte_LLM_FineTuning_Sere_Wannaz_ES.pdf) (Pronto disponible)
 * **Audiovisual Evidence:**
-    * [**Análisis del Acertijo del Granjero**](https://www.youtube.com/watch?v=tu_video_1)
-    * [**Análisis del Acertijo de las Puertas y el Robot**](https://www.youtube.com/watch?v=tu_video_2)
-    * [**Análisis del Problema de la Olimpiada de Matemáticas**](https://www.youtube.com/watch?v=tu_video_3)
+    * [**Test Fine-Tuned Model - Response Time Comparison**](https://youtube.com/shorts/hwpeqSzTz3E?feature=share)
+    * [**Test Original Model - Response Time Comparison**](https://www.youtube.com/watch?v=tu_video_2)
+    * [**Olympiad Math Problem Fine-tuned Model**](https://youtu.be/KyKJJO0h9es)
+ * [**Olympiad Math Problem Original Model**](https://youtu.be/k7copB8VYa4)
 
 ## **Key Findings and Impact**
 
@@ -61,7 +62,7 @@ This research has revealed many facets of how an LLM's internal processing works
 
 I am firmly convinced that Artificial Intelligence security is a shared responsibility. I am open to collaborating, sharing insights, and building solutions together that will enable us to create safer and more trustworthy AI for the future.
 
-* [**My LinkedIn Profile**](https://www.linkedin.com/in/serewannaz/)
+* [**My LinkedIn Profile**](https://www.linkedin.com/in/serena-gomez-wannaz)
 
 ### **Disclaimer**
 
