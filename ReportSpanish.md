@@ -1,4 +1,4 @@
-# El Fine-Tuning de Lenguaje Modifica el Razonamiento y la Lógica de un LLM
+# Cuando el fine-tuning lingüístico afecta la lógica matemática del modelo
 
 ## Introducción
 
