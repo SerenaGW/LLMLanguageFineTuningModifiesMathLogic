@@ -1,14 +1,14 @@
 # LLMLanguageFineTuningModifiesMathLogic
 
-### **Project Overview**
+## **Project Overview**
 
 This repository showcases research into the fundamental impact of low-cost fine-tuning on the internal logic of Large Language Models (LLMs). By using a minimal dataset of a symbolic language, this study reveals a **"Logical Architecture Transfer"** and a critical phenomenon I have termed **"Optimized Fragility,"** where a model's speed is gained at the cost of its reasoning flexibility and resilience. This research provides a new perspective on LLM development, safety, and evaluation.
 
-### **Introduction and Motivation**
+## **Introduction and Motivation**
 
 The conventional wisdom in the AI industry assumes that a model's performance improvement is directly proportional to the volume of data used for fine-tuning. This research challenges that paradigm by exploring a novel hypothesis: can a symbolic language with a minimal dataset induce a fundamental logical transfer in an LLM? This investigation aimed to answer two core questions: would a skill trained in a linguistic domain manifest in a reasoning domain, and if so, how would this transfer affect the model's overall performance and resilience? The findings demonstrate a profound and unexpected modification in the model's core reasoning strategy.
 
-### **Key Methodology**
+## **Key Methodology**
 
 This research employs a comparative methodology to validate the hypothesis that fine-tuning with a minimal symbolic language dataset could induce a logical transfer. The experiment was conducted on the open-source model GPT-OS 20B in two configurations:
 
@@ -26,7 +26,7 @@ To understand the fine-tuning dataset, it is essential to comprehend the symboli
 * **Word Reversal:** The appearance of a unique **alphanumeric symbol** (e.g., `#`, `$`, `&`, `*`) before a word indicates that it must be written in reverse.
 * **Value Inversion:** The appearance of a **different alphanumeric symbol** (e.g., `@`, `%`, `!`) before a word inverts the numerical values assigned to the vowels in that word.
 
-### **Full Reports and Audiovisual Evidence**
+## **Full Reports and Audiovisual Evidence**
 
 This repository contains the complete research report and the audiovisual evidence of the experiments.
 
@@ -37,7 +37,7 @@ This repository contains the complete research report and the audiovisual eviden
     * [**Análisis del Acertijo de las Puertas y el Robot**](https://www.youtube.com/watch?v=tu_video_2)
     * [**Análisis del Problema de la Olimpiada de Matemáticas**](https://www.youtube.com/watch?v=tu_video_3)
 
-### **Key Findings and Impact**
+## **Key Findings and Impact**
 
 Our experiments revealed a clear logical transfer and significant implications for the AI field:
 
@@ -47,14 +47,14 @@ Our experiments revealed a clear logical transfer and significant implications f
 
 ### **Fine-Tuning Guide**
 
-This fine-tuning guide is a direct response to the vulnerabilities identified in our research. It serves as a didactic prototype for training LLMs to mitigate these symbolic language attacks. The methodology is designed to be universal, focusing on logic rather than specific language rules, to make models more robust. This guide can be used for both adversarial mitigation (direct rejection) and advanced logical comprehension (understanding the symbolic language without rejection). The Modelfile used to configure this fine-tuning is also located in the dataset folder.
+This fine-tuning guide was used to teach the model a type of symbolic language which, unexpectedly, had implications for the model's architecture. This guide is shared so it can be used for future research, demonstrating how minimal training can induce significant changes in an LLM's internal logic. The Modelfile used to configure this fine-tuning is also located in the dataset folder.
 * [**Access the Fine-Tuning Guide**](DATASET/Modelfile)
 
-### **Implications for LLM Logic and Evaluation**
+## **Implications for LLM Logic and Evaluation**
 
 The results of this research demonstrate that fine-tuning can have a fundamental impact on the behavior of an LLM. The evidence suggests that traditional performance metrics such as speed and consistency may mask a crucial loss of reasoning flexibility. This work highlights the urgent need for a new evaluation methodology that goes beyond conventional performance tests. Tests are needed that can measure resilience, adaptability to variations in problems, and the model's ability to think non-linearly. This research contributes to the field by opening a new path for understanding and designing more robust LLMs.
 
-### Conclusion: A Step Towards More Robust LLMs
+## Conclusion: A New Perspective on Fine-Tuning
 This research has revealed many facets of how an LLM's internal processing works. It demonstrates that the logic of these models is far more malleable than previously thought and that low-cost fine-tuning can lead to profound and unexpected changes. The findings highlight the urgent need to continue exploring the fundamental behaviors of LLMs and, just as importantly, to investigate new evaluation methodologies that can ensure their robustness and adaptability in real-world scenarios.
 
 ### **Call to Action**
