@@ -30,7 +30,7 @@ To understand the fine-tuning dataset, it is essential to comprehend the symboli
 
 This repository contains the complete research report and the audiovisual evidence of the experiments.
 
-* [**Full Report in English**](informe/Reporte_LLM_FineTuning_Sere_Wannaz_EN.pdf)
+* [**Full Report in English**](https://github.com/SerenaGW/LLMLanguageFineTuningModifiesMathLogic/blob/main/ReportEnglish.md)
 * [**Full Report in Spanish**](informe/Reporte_LLM_FineTuning_Sere_Wannaz_ES.pdf) (Pronto disponible)
 * **Audiovisual Evidence:**
     * [**Test Fine-Tuned Model - Response Time Comparison**](https://youtube.com/shorts/hwpeqSzTz3E?feature=share)
