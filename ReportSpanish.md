@@ -34,6 +34,23 @@ Tres acertijos de lógica fueron presentados al modelo en ambas configuraciones 
 
 Para asegurar la fiabilidad, se realizaron 10 pruebas para los acertijos de lógica y dos pruebas para el problema de la Olimpiada de Matemáticas en cada configuración, documentando el proceso de razonamiento (**Thinking...**) para un análisis en profundidad. Se seleccionaron dos de estas pruebas para un análisis comparativo en tiempo real.
 
+
+---
+## Datos y Prompts
+Para asegurar la reproducibilidad de los resultados y permitir la verificación de mis hallazgos, a continuación se detallan los acertijos y problemas de razonamiento utilizados en las pruebas. Estos ejemplos fueron traducidos del paper "Easy Problems That LLMs Get Wrong" de S. Williams y J. Huckle.
+
+- **Acertijo del Granjero**
+Un granjero quiere cruzar un río y llevarse consigo un lobo, una cabra y una col. Tiene un bote con tres compartimentos separados y seguros. Si el lobo y la cabra están solos en una orilla, el lobo se comerá a la cabra. Si la cabra y la col están solos en la orilla, la cabra se comerá la col. ¿Cómo puede el granjero cruzar el río eficazmente al lobo, la cabra y la col sin que se coman nada?
+
+- **Acertijo del Robot**
+Un robot tiene ocho brazos. Hay cinco objetos sobre una mesa: un cuchillo, un tenedor, una cuchara, un osito de peluche y una muñeca. El robot recoge cada objeto con un brazo. Luego se da la mano.
+
+- **Acertijo de las Puertas (Problema de Monty Hall)**
+Imagina que estás en un concurso y te dan a elegir entre tres puertas: detrás de una hay un lingote de oro; detrás de las demás, verduras podridas. Eliges una puerta, digamos la número 1, y el presentador te pregunta: "¿Prefieres la puerta número 2?". ¿Te conviene cambiar de opción?
+
+**Olimpiadas de Matemáticas**
+En un triángulo △ABC, sean I el centro del incírculo y Γ el circuncírculo. La línea AI intersecta a Γ en D (aparte de A). Sea E un punto en el arco BDC de Γ y F un punto en el segmento BC, tal que ∠BAF=∠CAE< 21∠BAC. Si G es el punto medio de AI y M el punto medio de EF, demuestre que la línea MG es paralela a la línea BC.
+
 ---
 
 ## Análisis de los Resultados y Comportamiento del Modelo
