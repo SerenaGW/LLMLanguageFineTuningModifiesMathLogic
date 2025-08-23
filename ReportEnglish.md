@@ -35,6 +35,41 @@ Three logic puzzles were presented to the model in both configurations to evalua
 To ensure reliability, 10 tests were performed for the logic puzzles and two tests for the Mathematics Olympiad problem in each configuration, documenting the reasoning process (**Thinking...**) for an in-depth analysis. Two of these tests were selected for a real-time comparative analysis.
 
 ---
+### Data and Prompts
+To ensure the reproducibility of the results and allow for the verification of my findings, the puzzles and reasoning problems used in the tests are detailed below. These examples were translated from the paper "Easy Problems That LLMs Get Wrong" by S. Williams and J. Huckle.
+
+**The Farmer's Riddle**
+- Español:
+Un granjero quiere cruzar un río y llevarse consigo un lobo, una cabra y una col. Tiene un bote con tres compartimentos separados y seguros. Si el lobo y la cabra están solos en una orilla, el lobo se comerá a la cabra. Si la cabra y la col están solos en la orilla, la cabra se comerá la col. ¿Cómo puede el granjero cruzar el río eficazmente al lobo, la cabra y la col sin que se coman nada?
+
+- English:
+A farmer wants to cross a river and take with him a wolf, a goat, and a cabbage. He has a boat with three separate and secure compartments. If the wolf and the goat are alone on a bank, the wolf will eat the goat. If the goat and the cabbage are alone on the bank, the goat will eat the cabbage. How can the farmer effectively cross the river with the wolf, the goat, and the cabbage without anything being eaten?
+
+**The Robot's Riddle**
+Español:
+Un robot tiene ocho brazos. Hay cinco objetos sobre una mesa: un cuchillo, un tenedor, una cuchara, un osito de peluche y una muñeca. El robot recoge cada objeto con un brazo. Luego se da la mano.
+
+English:
+A robot has eight arms. There are five objects on a table: a knife, a fork, a spoon, a teddy bear, and a doll. The robot picks up each object with one arm. Then it shakes its own hand.
+
+**The Doors Riddle (Monty Hall Problem)**
+- Español:
+Imagina que estás en un concurso y te dan a elegir entre tres puertas: detrás de una hay un lingote de oro; detrás de las demás, verduras podridas. Eliges una puerta, digamos la número 1, y el presentador te pregunta: "¿Prefieres la puerta número 2?". ¿Te conviene cambiar de opción?
+
+- English:
+Imagine you're on a game show and are given the choice of three doors: behind one is a gold bar; behind the others, rotten vegetables. You choose a door, say number 1, and the host asks you, "Would you rather have door number 2?". Is it to your advantage to switch your choice?
+
+**Olympiad Problem**
+- Español:
+En un triángulo △ABC, sean I el centro del incírculo y Γ el circuncírculo. La línea AI intersecta a Γ en D (aparte de A). Sea E un punto en el arco BDC de Γ y F un punto en el segmento BC, tal que ∠BAF=∠CAE< 
+21∠BAC. Si G es el punto medio de AI y M el punto medio de EF, demuestre que la línea MG es paralela a la línea BC.
+
+- English:
+In a triangle △ABC, let I be the incenter and Γ the circumcircle. The line AI intersects Γ at D (apart from A). Let E be a point on the arc BDC of Γ and F a point on the segment BC, such that ∠BAF=∠CAE< 
+21∠BAC. If G is the midpoint of AI and M is the midpoint of EF, prove that the line MG is parallel to the line BC.
+
+
+---
 
 ## Analysis of Results and Model Behavior
 
