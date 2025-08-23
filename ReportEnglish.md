@@ -1,4 +1,4 @@
-# The Role of Language Fine-Tuning in Modifying the Reasoning and Logic of an LLM
+# When Linguistic Fine-Tuning Affects the Mathematical Logic of a Model
 
 ## Introduction
 
