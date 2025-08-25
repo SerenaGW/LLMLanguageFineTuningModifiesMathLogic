@@ -73,7 +73,7 @@ This repository contains the complete research report and the audiovisual eviden
 
 ## **Key Findings and Impact**
 
-Our experiments revealed a clear logical transfer and significant implications for the AI field:
+The experiments revealed a clear logical transfer and significant implications for the AI field:
 
 * **Logical Architecture Transfer (New Concept):** The fine-tuning induced a deep change in the model's reasoning strategy. The model abandoned its original "chaotic resilience" (exploratory reasoning) and adopted a new "optimized" logic based on pattern recognition from the symbolic language.
 * **Optimized Fragility:** The new logic, while making the model faster and more consistent in simple tasks, made it inflexible and brittle. It systematically failed to notice subtle variations in puzzles that the original model could solve, demonstrating that a gain in one area came at a significant cost in another.
