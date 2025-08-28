@@ -15,13 +15,13 @@ The investigation focused on two main questions:
 * Would a shift in the reasoning process occur? Would a skill trained in one domain (symbolic language substitution) manifest in another (solving puzzles and geometry problems)?
 * How would this shift manifest? Would it be a performance improvement or, on the contrary, an unexpected side effect that would affect the model's resilience and accuracy?
 
-The results of this experimentation have revealed a fascinating and complex phenomenon, **suggesting** that a model's modification goes beyond the quantity of data and has a fundamental impact on its **reasoning methodology**.
+The results of this experimentation have revealed a fascinating and complex phenomenon, suggesting that a model's modification goes beyond the quantity of data and has a fundamental impact on its **reasoning methodology**.
 
 ---
 
 ## Key Methodology
 
-The main objective of this experiment was to validate the hypothesis that **in-context learning** with a minimal symbolic language dataset could **modulate the reasoning and decision-making** of a Large Language Model (LLM).
+The main objective of this experiment was to validate the hypothesis that in-context learning with a minimal symbolic language dataset could **modulate the reasoning and decision-making** of a Large Language Model (LLM).
 
 To do this, I worked with the open-source model GPT-OS 20B in two configurations:
 
