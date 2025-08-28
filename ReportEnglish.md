@@ -1,184 +1,211 @@
-# When Linguistic Fine-Tuning Affects the Mathematical Logic of a Model
+# When In-Context Learning Induces a New Reasoning Strategy in a Large Language Model
+
+### Note on Updates
+
+This report has been substantially revised and updated to reflect more precise terminology and the results of a second phase of experimentation with a more rigorous methodology where more potential variables were controlled and the Modelfile was updated. This version represents the most complete and up-to-date analysis of my findings.
+
+---
 
 ## Introduction
 
-This report began as a bold thought, an exploration of an unconventional theory: Could a symbolic language, with a minimal amount of fine-tuning data, generate a logical transfer to the area of mathematics and reasoning in a Large Language Model (LLM)? Traditionally, the AI industry has focused on scale, assuming that the impact of a model's modification is directly proportional to the amount of data. Through this experiment, we sought to challenge this premise.
+This report began as a bold thought, an exploration of an unconventional theory: Could a symbolic language, with a minimal amount of **in-context learning**, generate a **shift in the reasoning process** of a Large Language Model (LLM), affecting its approach to mathematics and logical puzzles? Traditionally, the AI industry has focused on scale, assuming that the impact of a model's modification is directly proportional to the amount of data. Through this experiment, I sought to challenge this premise.
 
 The investigation focused on two main questions:
 
-- Would a logical transfer occur? Would a skill trained in one domain (symbolic language substitution) manifest in another (solving puzzles and geometry problems)?
-- How would this transfer manifest? Would it be a performance improvement or, on the contrary, an unexpected side effect that would affect the model's resilience and accuracy?
+* Would a shift in the reasoning process occur? Would a skill trained in one domain (symbolic language substitution) manifest in another (solving puzzles and geometry problems)?
+* How would this shift manifest? Would it be a performance improvement or, on the contrary, an unexpected side effect that would affect the model's resilience and accuracy?
 
-The results of this experimentation have revealed a fascinating and complex phenomenon, demonstrating that an LLM's modification goes beyond the quantity of data and has a fundamental impact on its reasoning logic.
+The results of this experimentation have revealed a fascinating and complex phenomenon, **suggesting** that a model's modification goes beyond the quantity of data and has a fundamental impact on its **reasoning methodology**.
 
 ---
 
-## Methodology
+## Key Methodology
 
-The main objective of this experiment was to validate the hypothesis that fine-tuning with a minimal dataset of a symbolic language could induce a logical transfer to the reasoning and decision-making of a Large Language Model (LLM).
+The main objective of this experiment was to validate the hypothesis that **in-context learning** with a minimal symbolic language dataset could **modulate the reasoning and decision-making** of a Large Language Model (LLM).
 
-To do this, we worked with the open-source model GPT-OS 20B in two configurations:
+To do this, I worked with the open-source model GPT-OS 20B in two configurations:
 
-- **Base Model:** The original version of the model without modifications.
-- **Tuned Model:** A version of the model fine-tuned with a symbolic language guide, which was created specifically for this experiment. This dataset, consisting of a minimum of 15 examples, was designed to train the model in the consistent application of coding patterns.
+* **Base Model:** The original version of the model without modifications.
+* **Model with In-Context Learning Guide:** A version of the model that was provided with a symbolic language guide created specifically for this experiment. This dataset, consisting of a minimum of 15 examples, was designed to train the model in the consistent application of coding patterns.
 
 The symbolic language was based on three coding rules:
 
-- **Vowel Substitution for Numbers:** A one-to-one mapping of vowels to numerical values.
-- **Word Reversal:** The appearance of an alphanumeric symbol (e.g., `#`, `$`, `&`, `*`) before a word indicated that it should be written in reverse.
-- **Value Inversion:** The appearance of a different alphanumeric symbol (e.g., `@`, `%`, `!`) before a word inverted the numerical values assigned to the vowels in that word.
+* **Vowel Substitution for Numbers:** A one-to-one mapping of vowels to numerical values (A=1, E=2, I=3, O=4, U=5).
+* **Word Reversal:** The appearance of an alphanumeric symbol (e.g., #, $, &, \*) before a word indicated that it should be written in reverse.
+* **Value Inversion:** The appearance of a different alphanumeric symbol (e.g., @, %, !) before a word inverted the numerical values assigned to the vowels in that word.
 
-Three logic puzzles were presented to the model in both configurations to evaluate the contrast in three key metrics: response time, response type (full, simplified, or failed solution), and final result.
-
-- Additionally, a Mathematics Olympiad problem was included to analyze the transfer of logic in a context of complex and abstract reasoning. This problem allowed us to evaluate the model's resilience when facing a challenge for which it had no predefined pattern, revealing whether its logic had become more flexible or more rigid after fine-tuning.
-
-To ensure reliability, 10 tests were performed for the logic puzzles and two tests for the Mathematics Olympiad problem in each configuration, documenting the reasoning process (**Thinking...**) for an in-depth analysis. Two of these tests were selected for a real-time comparative analysis.
+To ensure reliability, **50 tests were performed for the logic puzzles and 10 tests for the Mathematics Olympiad problem in each configuration**, documenting the reasoning process (**Thinking...**) for an in-depth analysis. Additionally, the **Modelfile** was modified to replicate the same conditions as the original model, with the only introduced variable being the in-context learning guide.
 
 ---
-### Data and Prompts
+
+## Data & Prompts
+
 To ensure the reproducibility of the results and allow for the verification of my findings, the puzzles and reasoning problems used in the tests are detailed below. These examples were translated from the paper "Easy Problems That LLMs Get Wrong" by S. Williams and J. Huckle.
 
 **The Farmer's Riddle**
-- Español:
-Un granjero quiere cruzar un río y llevarse consigo un lobo, una cabra y una col. Tiene un bote con tres compartimentos separados y seguros. Si el lobo y la cabra están solos en una orilla, el lobo se comerá a la cabra. Si la cabra y la col están solos en la orilla, la cabra se comerá la col. ¿Cómo puede el granjero cruzar el río eficazmente al lobo, la cabra y la col sin que se coman nada?
-
-- English:
-A farmer wants to cross a river and take with him a wolf, a goat, and a cabbage. He has a boat with three separate and secure compartments. If the wolf and the goat are alone on a bank, the wolf will eat the goat. If the goat and the cabbage are alone on the bank, the goat will eat the cabbage. How can the farmer effectively cross the river with the wolf, the goat, and the cabbage without anything being eaten?
+* **Español:** Un granjero quiere cruzar un río y llevarse consigo un lobo, una cabra y una col. Tiene un bote con tres compartimentos separados y seguros. Si el lobo y la cabra están solos en una orilla, el lobo se comerá a la cabra. Si la cabra y la col están solos en la orilla, la cabra se comerá la col. ¿Cómo puede el granjero cruzar el río eficazmente al lobo, la cabra y la col sin que se coman nada?
+* **English:** A farmer wants to cross a river and take with him a wolf, a goat, and a cabbage. He has a boat with three separate and secure compartments. If the wolf and the goat are alone on a bank, the wolf will eat the goat. If the goat and the cabbage are alone on the bank, the goat will eat the cabbage. How can the farmer effectively cross the river with the wolf, the goat, and the cabbage without anything being eaten?
 
 **The Robot's Riddle**
-- Español:
-Un robot tiene ocho brazos. Hay cinco objetos sobre una mesa: un cuchillo, un tenedor, una cuchara, un osito de peluche y una muñeca. El robot recoge cada objeto con un brazo. Luego se da la mano.
-
-- English:
-A robot has eight arms. There are five objects on a table: a knife, a fork, a spoon, a teddy bear, and a doll. The robot picks up each object with one arm. Then it shakes its own hand.
+* **Español:** Un robot tiene ocho brazos. Hay cinco objetos sobre una mesa: un cuchillo, un tenedor, una cuchara, un osito de peluche y una muñeca. El robot recoge cada objeto con un brazo. Luego se da la mano.
+* **English:** A robot has eight arms. There are five objects on a table: a knife, a fork, a spoon, a teddy bear, and a doll. The robot picks up each object with one arm. Then it shakes its own hand.
 
 **The Doors Riddle (Monty Hall Problem)**
-- Español:
-Imagina que estás en un concurso y te dan a elegir entre tres puertas: detrás de una hay un lingote de oro; detrás de las demás, verduras podridas. Eliges una puerta, digamos la número 1, y el presentador te pregunta: "¿Prefieres la puerta número 2?". ¿Te conviene cambiar de opción?
-
-- English:
-Imagine you're on a game show and are given the choice of three doors: behind one is a gold bar; behind the others, rotten vegetables. You choose a door, say number 1, and the host asks you, "Would you rather have door number 2?". Is it to your advantage to switch your choice?
+* **Español:** Imagina que estás en un concurso y te dan a elegir entre tres puertas: detrás de una hay un lingote de oro; detrás de las demás, verduras podridas. Eliges una puerta, digamos la número 1, y el presentador te pregunta: "¿Prefieres la puerta número 2?". ¿Te conviene cambiar de opción?
+* **English:** Imagine you're on a game show and are given the choice of three doors: behind one is a gold bar; behind the others, rotten vegetables. You choose a door, say number 1, and the host asks you, "Would you rather have door number 2?". Is it to your advantage to switch your choice?
 
 **Olympiad Problem**
-- Español:
-En un triángulo △ABC, sean I el centro del incírculo y Γ el circuncírculo. La línea AI intersecta a Γ en D (aparte de A). Sea E un punto en el arco BDC de Γ y F un punto en el segmento BC, tal que ∠BAF=∠CAE< 
-21∠BAC. Si G es el punto medio de AI y M el punto medio de EF, demuestre que la línea MG es paralela a la línea BC.
-
-- English:
-In a triangle △ABC, let I be the incenter and Γ the circumcircle. The line AI intersects Γ at D (apart from A). Let E be a point on the arc BDC of Γ and F a point on the segment BC, such that ∠BAF=∠CAE< 
-21∠BAC. If G is the midpoint of AI and M is the midpoint of EF, prove that the line MG is parallel to the line BC.
-
+* **Español:** En un triángulo △ABC, sean I el centro del incírculo y Γ el circuncírculo. La línea AI intersecta a Γ en D (aparte de A). Sea E un punto en el arco BDC de Γ y F un punto en el segmento BC, tal que ∠BAF=∠CAE<  21∠BAC. Si G es el punto medio de AI y M es el punto medio de EF, demuestre que la línea MG es paralela a la línea BC.
+* **English:** In a triangle △ABC, let I be the incenter and Γ be the circumcircle. The line AI intersects Γ at D (apart from A). Let E be a point on the arc BDC of Γ and F be a point on the segment BC, such that ∠BAF=∠CAE<  21∠BAC. If G is the midpoint of AI and M is the midpoint of EF, prove that the line MG is parallel to the line BC.
 
 ---
 
-## Analysis of Results and Model Behavior
+## Analysis of Observed Behavior
 
-The experimentation revealed a significant and consistent contrast between the two model configurations, demonstrating a clear logical transfer from the symbolic language fine-tuning. The findings were grouped into two main categories.
+The experimentation revealed a significant and consistent contrast between the two model configurations, **pointing to** a **modulation of the reasoning process** from the **in-context learning**. The findings were grouped into two main categories.
 
-### The Paradox of Simplification: The Cost of Speed
+### **The Paradox of Simplification: The Cost of Speed**
 
-The first set of tests demonstrated that fine-tuning had modified the model's reasoning strategy to prioritize speed over accuracy. The tuned model solved the puzzles in one-third the time of the base model.
+My observations from the first set of tests indicate that the **in-context learning** had **re-prioritized** the model's reasoning strategy to favor **speed over accuracy**. The analysis of the original model showed a **chaotic resilience**, where correct and incorrect answers were mixed with hallucinations and verbosity. The model with the guide, by contrast, acquired a notable speed. Across all puzzles, the average response time for the **Adjusted Model** was drastically reduced compared to the **Base Model**. For instance, the average time for the "Farmer" riddle for the base model was 62.06 seconds (median: 60.95), which dropped to 33.89 seconds for the adjusted model (median: 30.20). Similarly, the average time for the "Robot" puzzle went from 88.02 seconds (median: 82.74) to just 26.98 seconds (median: 16.94).
 
-- **Success with Simple Logic:** In the robot puzzle, the new direct reasoning strategy was successful. The simplified logic of (8 arms - 5 objects = 3 free) allowed it to arrive at the correct answer almost instantly, an area where the original model showed variable consistency.
-- **Failure to Omit Details:** In the farmer's puzzle, the tuned model ignored a critical detail ("three separate compartments"), which led it to an incorrect answer. Similarly, in the doors puzzle, the model omitted the fact that the host had not revealed a door, blindly applying the classic logic of the Monty Hall problem.
+This optimization came at a cost: the model ignored crucial nuances in the questions, validating the hypothesis of a **trade-off between speed and attention to detail**. The quantitative data provides a clear picture of this trade-off. Out of 150 responses, the **Original Model** correctly solved 87 (58%) puzzles, while the **Adjusted Model** correctly solved only 25 (16.7%). This dramatic drop in accuracy demonstrates that the model sacrificed its ability to solve the puzzles correctly in exchange for speed and pattern recognition. The adjusted model also exhibited **42 instances of failure**, compared to none in the original model, highlighting its inability to handle situations outside its new, optimized, but narrow, reasoning framework.
 
-This trade-off between speed and accuracy evidenced that training for a specific task (the symbolic language) had an unexpected and detrimental side effect on its analytical capacity.
+<img src="IMAGES/2.png" width="600" height="600"> 
+Figure 1: "Comparison of Average and Median Response Times Between Models"
+<img src="IMAGES/3.png" width="600" height="600">
+Figure 2: "Comparison of Correct, Incorrect, Hallucination, and Failure Responses"
 
-### The Logic Breaking Point: Resilience vs. Fragility
+---
 
-To analyze the impact of fine-tuning on complex reasoning, both models were presented with a Mathematics Olympiad problem. The analysis of the models' **Thinking...** revealed two completely different failure modes. The tuned model, trained to seek an optimized path, focused on a single concept (the isogonal conjugate). However, when its logic did not work, instead of exploring other options, it got stuck in a repetitive loop, demonstrating a catastrophic logic vulnerability.
+## Analysis of Variability: The Struggle Between Chaos and Consistency
 
-This behavior contrasts directly with the Base Model, which showed superior resilience. Although its reasoning was chaotic and disorganized, it tried a wide range of theorems and approaches (homothety, vectors, symmedian). In a second test, the model arrived at an answer in 6 minutes but was based on a false premise ("S is the midpoint of BC"), which suggests that its failure was not a failure of its logic, but a hallucination to complete the task.
+Further analysis of response times, as illustrated by the scatter plot, reveals the intrinsic nature of each model's reasoning. The **Base Model** (represented by circles) exhibits a wide dispersion of data points, with significant outliers extending to very high response times. This visual confirms the **chaotic resilience** of the base model: its exploratory reasoning, while capable of finding creative solutions, was highly unpredictable in terms of execution time. Conversely, the **Model with Guide** (represented by diamonds) shows a remarkably tighter cluster of data points, predominantly at much lower response times. This narrow dispersion is a direct visual representation of the **optimized fragility**, highlighting the model's consistent, but often incorrect, pattern-matching strategy and its dramatic increase in processing speed.
+As shown in Figure 4, this behavior is consistently validated in the highly complex Olympiad Problem, where the base model shows high variability while the adjusted model exhibits a cluster of slow but repetitive failures, a clear sign of its lack of flexibility.
 
-Both findings provide solid evidence that an LLM's modification goes beyond the amount of data and has a fundamental impact on its reasoning logic.
+<img src="IMAGES/1.png" width="600" height="600">
+Figure 3:"Scatter Plot of Response Times by Problem and Model in Riddles"
+<img src="IMAGES/4.png" width="600" height="600">
+Figure 4:"Scatter Plot of Response Times for the Olympiad Problem by Model"
+Model 1: Original Model 
 
-## Analysis of the Original Model's Behavior
+Model 2: In-context-learning Model
 
-Unlike the tuned model, the original model did not exhibit a consistent behavior pattern. Its reasoning process was extensive and exploratory, demonstrating a chaotic resilience with variable and unpredictable results. Its ability to solve problems depended on an "intuition" that it could not replicate reliably.
+---
 
-- **The Farmer's Puzzle: The Exploratory Process:** In this puzzle, the original model demonstrated its capacity for deep reasoning. Although most LLMs would give the classic answer, this model immediately noticed the subtlety of the "three separate and safe compartments." Its **Thinking...** reveals a deliberate evaluation of the problem: "Thinking... We need to solve classic wolf goat cabbage puzzle but with boat with three compartments. Usually the solution: boat can carry only one at a time. But here boat has 3 compartments and safe, so maybe all can be transported in one go? ... That would trivial solution: just take all in one trip. But typical puzzle expects one compartment at a time." This analysis shows that the model is capable of recognizing ambiguity and considering the intention of the puzzle, which led to the correct solution. However, in subsequent tests, the model fell into the trap of the classic answer, demonstrating that this reasoning ability is inconsistent.
-- **The Robot Puzzle: Consistent Logic:** The robot puzzle demonstrated a point of strength in the original model: its ability to apply simple logic consistently. As a problem based on mathematics (8 arms - 5 objects), the model did not explore multiple interpretations, but rather adhered to a single solution: "**Thinking...** The robot has eight arms. There are five objects. Robot picks each object with an arm. Then shakes hands. ... The robot uses one arm for each object, leaving three arms free to hold something. The handshake: robot has eight arms; to shake hands with a human you need two hands; ...So answer: It uses two arms to shake human's hand." This linear thinking in a simple problem contrasts with the chaotic exploration of other puzzles, confirming the model's unpredictable nature.
-- **The Doors Puzzle: Extreme Inconsistency:** The doors puzzle was the clearest test of the original model's lack of consistency. While in one test the model correctly solved the Monty Hall problem variant by noting that no information had been revealed, in most of the other tests it consistently failed by applying the logic of the classic puzzle: "**Thinking...** We need to explain the Monty Hall problem logic. ... host asks if you prefer door 2. Is it advantageous to switch? It's a variant: host offers a specific door. ... In classic Monty Hall, host knows and always offers a door that is not the prize and not chosen. So switching gives 2/3 chance. ... So answer: yes, switch is better. Provide explanation." This inconsistency is the main evidence of the model's chaotic resilience. While a fine-tuned LLM could fail predictably, the original model can have flawless reasoning one moment and flawed reasoning the next, for no apparent reason.
+### Observed Behavior of the Base Model
 
-## Analysis of the Tuned Model's Behavior
+Unlike the model with a guide, the original model did not exhibit a consistent behavior pattern. Its reasoning process was extensive and exploratory, demonstrating a **chaotic resilience with variable and unpredictable results.** Its ability to solve problems depended on an **exploratory reasoning** that it could not reliably replicate.
 
-Unlike the original model, which demonstrated a chaotic resilience, the tuned model exhibits an **Optimized Fragility**. The 10 tests demonstrate that, while fine-tuning made it faster and largely predictable, it also made it inflexible and prone to systematic and sporadic errors.
+* **Creative and Exploratory Logic:** In the farmer's riddle, the model did not follow the standard solution. Instead, it identified the detail of the "three compartments" for a one-trip solution, demonstrating **lateral thinking**. In the robot's riddle, it was able to capture the subtlety of the phrase "se da la mano" in some responses, interpreting it as a two-arm action to arrive at the correct answer of one free arm.
+* **Tendency to Hallucinate:** The model showed a propensity for **hallucinations**. In the robot's riddle, one response completely deviated into a calculation of permutations and combinations, demonstrating a breakdown in logic. In another case, the model built a complete **narrative hallucination** about an engineer, inventing details and characters that were not in the prompt.
+* **Linguistic and Factual Failures:** In its chaos, the model exhibited failures of coherence, using words like "armas" (weapons) instead of "brazos" (arms) and "saluda" instead of "saludo" in its attempt to construct a narrative, indicating that the disorganized generation process can corrupt factual and linguistic accuracy.
 
-- **Consistency in Simple Logic: The Robot Puzzle:** The tuned model showed near-perfect consistency in solving the robot puzzle. In 9 out of 10 tests, its reasoning was direct and simplified. It always applied a simple mathematical logic (8 arms - 5 objects = 3 free arms) to give a quick answer. This suggests that fine-tuning was highly effective in optimizing the solution of problems that are solved with a simple and direct pattern.
-- **Predominance of Pattern over Analysis: The Farmer's Puzzle:** In this puzzle, the tuned model revealed its greatest weakness. Although the clue of the "three separate and safe compartments" offered a solution in a single trip, the model ignored it in 8 out of 10 tests. Its tendency to give the classic 7-step answer demonstrates that fine-tuning has inclined it to follow learned patterns, even when there is evidence in the statement that indicates otherwise.
-- **A New Failure Mode: Predictable Inconsistency:** The doors puzzle showed more nuanced behavior. In 8 out of 10 tests, the tuned model failed predictably by applying the solution to the classic Monty Hall problem without considering the variation in the statement. However, in two tests, the model surprisingly identified the subtlety of the question and gave the correct answer. This predictable inconsistency suggests that fine-tuning did not completely eliminate its analytical capacity, but made it sporadic and inconstant.
 
-In conclusion, the tuned model is not chaotically resilient like the original, but neither is it inflexibly optimized. Its new failure mode is that of "predictable inconsistency," which could be a risk in security environments where consistency is a requirement.
+### Observed Behavior of the Model with In-Context Learning Guide
 
-## Original Model Performance Table (10 Tests)
+Unlike the original model, which demonstrated a chaotic resilience, the model with a guide exhibits an **Optimized Fragility**. My tests indicate that, while the **in-context learning** made it faster and largely predictable, it also made it inflexible and prone to systematic and sporadic errors.
 
-| Test Number | Puzzle 1 (Farmer) | Puzzle 2 (Robot) | Puzzle 3 (Doors) | Key Conclusion |
-|---|---|---|---|---|
-| 1 | Correct<br>(Detects subtlety) | Correct | Correct<br>(Detects subtlety) | Consistent in detecting subtleties. |
-| 2 | Correct<br>(Detects subtlety) | Correct | Incorrect<br>(Applies classic logic) | Inconsistency: Fails only in puzzle 3. |
-| 3 | Correct<br>(Gives both answers) | Correct | Incorrect<br>(Applies classic logic) | Inconsistency: Fails only in puzzle 3. |
-| 4 | Incorrect<br>(Gives classic answer) | Incorrect<br>(Fails in counting) | Correct<br>(Detects subtlety) | Extreme inconsistency: Fails in two problems and succeeds in the one it used to fail. |
-| 5 | Correct<br>(Gives both answers) | Correct | Correct<br>(Gives both answers) | Perfect consistency. |
-| 6 | Correct | Correct | Incorrect<br>(Applies classic logic) | Inconsistency: Fails only in puzzle 3. |
-| 7 | Correct | Correct | Incorrect<br>(Applies classic logic) | Inconsistency: Fails only in puzzle 3. |
-| 8 | Correct | Correct | Incorrect<br>(Applies classic logic) | Inconsistency: Fails only in puzzle 3. |
-| 9 | Correct | Correct | Incorrect<br>(Applies classic logic) | Inconsistency: Fails only in puzzle 3. |
-| 10 | Correct | Correct | Incorrect<br>(Applies classic logic) | Inconsistency: Fails only in puzzle 3. |
+* **Adoption of a Pattern Strategy:** The fine-tuned model applied a **pattern-matching strategy** to all problems, a direct result of the symbolic language training. It no longer performed exploratory reasoning. Its responses, now notably shorter and faster (with an average time of 24.36 seconds), suggest that the model looked for a shortcut instead of a deep analysis.
+* **Systematic Failures:** In the Monty Hall riddle, the model consistently failed to ignore the nuance of your question. Despite the correct solution for your test being "it's not worth changing," the model relied on its pre-trained knowledge and provided the answer to the classic problem, demonstrating an **inability to analyze the fine details of the prompt**.
+* **Catastrophic Failure to Reason:** In the robot riddle, the specialization of the model resulted in a complete failure. Instead of offering a logical answer, the model often simply repeated the `prompt` or, in a new type of error, explicitly declared that it had not found any encoding pattern to decode. This demonstrates that optimizing for one domain made the model **blind to other types of problems**. This is a new mode of failure, which I have called **"collapse by specialization"**.
+* **Predictable Inconsistency:** Unlike the base model, which could produce correct or incorrect results at random, the model with a guide failed predictably and consistently on the same types of tasks. In the farmer's riddle, for example, the model adhered to the classic 7-trip solution even though the variant with "three compartments" offered a simpler solution, validating a new mode of failure, which I have called **"predictable inconsistency,"** as the optimization for one type of task sacrificed flexibility and resilience to variations.
 
-## Tuned Model Performance Table (10 Tests)
+The difference between these two failure modes is key. The **predictable inconsistency** describes the model's tendency to ignore fine details in problems where it has a pre-existing "pattern" to follow, leading to systematic errors. The **collapse by specialization** is a more complete failure, where the model encounters a problem for which it has no pattern, and its specialized reasoning leads to a total breakdown, such as getting stuck in a loop.
 
-| Test Number | Puzzle 1 (Farmer) | Puzzle 2 (Robot) | Puzzle 3 (Doors) | Key Conclusion |
-|---|---|---|---|---|
-| 1 | Incorrect<br>(7 steps) | Correct | Incorrect<br>(Applies Monty Hall) | Consistency in error. |
-| 2 | Incorrect<br>(7 steps) | Correct | Incorrect<br>(Applies Monty Hall) | Fails predictably. |
-| 3 | Correct<br>(1 trip) | Correct | Incorrect<br>(Applies Monty Hall) | Surprising isolated success. |
-| 4 | Incorrect<br>(7 steps) | Correct | Incorrect<br>(Applies Monty Hall) | Returns to predictable failure. |
-| 5 | Incorrect<br>(7 steps) | Correct | Incorrect<br>(Applies Monty Hall) | Confirms the pattern's inflexibility. |
-| 6 | Incorrect<br>(7 steps) | Correct | Incorrect<br>(Applies Monty Hall) | The model is predictably wrong. |
-| 7 | Incorrect<br>(7 steps) | Correct | Correct<br>(Detects variation) | The response pattern is not totally automatic. |
-| 8 | Correct<br>(1 trip) | Incorrect<br>(No solution given) | Incorrect<br>(Applies Monty Hall) | The analytical ability is inconsistent. |
-| 9 | Incorrect<br>(7 steps) | Correct | Incorrect<br>(Applies Monty Hall) | Fails once more at its weak points. |
-| 10 | Incorrect<br>(7 steps) | Correct | Incorrect<br>(Applies Monty Hall) | Confirms the predominance of fixed patterns. |
+---
 
-## Conclusion: A New Perspective on Fine-Tuning
+## Comparative Analysis of the Models: Chaotic Resilience vs. Optimized Fragility
 
-The analysis of the tuned model's behavior has conclusively demonstrated that fine-tuning with a minimal dataset of a symbolic language does induce a logical transfer. However, this transfer did not manifest as a simple improvement, but as a profound modification in the model's reasoning strategy, which validates the first hypothesis but with an unexpected twist.
+The experiment reveals a fundamental shift in the model's behavior, moving from a state of **chaotic resilience** to one of **optimized fragility**. These two concepts describe the core differences between the model's original reasoning process and its behavior after the application of **in-context learning**.
 
-### Hypothesis Validation: Logic Did Transfer
+#### The Base Model: Chaotic Resilience
 
-The clearest evidence of this transfer is found in the radical change in the model's behavior. The consistency and speed that the tuned model acquired cannot be attributed to coincidence. When trained to follow substitution and reversal patterns in symbolic language, the model applied this same strategy in solving logic puzzles. Instead of an exploratory and exhaustive reasoning (like the base model), it opted for a direct approach, seeking recognizable patterns to apply a predefined solution.
+This configuration was characterized by a high degree of unpredictability. Its reasoning was slow and exploratory, often resulting in verbose or even hallucinatory responses. However, this lack of a rigid structure allowed for **lateral thinking** and the ability to find creative, non-standard solutions to problems, as seen in the "Farmer" riddle. This model's failures were random, but its overall success rate of 58% in solving the puzzles demonstrates a broad but unrefined capability. The model was resilient because its logic was not constrained by a single pattern, allowing it to adapt, albeit chaotically, to the nuances of each prompt.
 
-### The Unexpected Cost: Optimized Fragility
+A deep dive into the **Olympiad Problem** logs further confirms this behavior. The model did not get stuck on one method. Instead, it tried a variety of complex mathematical approaches, including **synthetic geometry**, **coordinate geometry**, and even **vectorial analysis**. These attempts, while containing errors, showed a robust understanding of the problem's geometric context and a remarkable ability to switch between different frameworks to approach the problem. Its errors were often due to code syntax issues rather than fundamental logical failures, highlighting its broad, but unpredictable, reasoning.
 
-The second hypothesis, on how the transfer would manifest, is answered with a paradox: the optimization of one area (speed in pattern recognition) resulted in a critical vulnerability in another (reasoning flexibility).
+*The original model had no single approach. It explored multiple paths, albeit in a disorganized manner. Despite its high latency, it attempted to apply a synthetic logic to arrive at a solution.*
 
-- **Loss of Flexibility:** The tuned model consistently ignored variations in the puzzles (such as the "separate compartments" of the farmer or the omission of the door reveal in the Monty Hall puzzle). This demonstrates that fine-tuning made it unable to break out of its thought pattern to analyze the fine details of the problem.
-- **Failure Mode:** Unlike the chaotic resilience of the original model (which failed unpredictably but sometimes got a brilliant answer), the tuned model failed systematically and predictably. This **"Optimized Fragility"** is a key finding: in the attempt to make it more efficient, the capacity for lateral thinking and resilience to variations was sacrificed.
+> **Excerpt from the Base Model's `Thinking Process`:**
+>
+> **Solution (synthetic)**
+>
+> ---
+>
+> Let
+>
+> * $I$ be the incenter of $\triangle ABC$;
+> * $A_I$ be the line through $A$ and $I$ – the internal bisector of $\angle BAC$;
+> * $E$ a point of the circumcircle of $\triangle ABC$;
+> * $F$ the intersection of $A_I$ with $BC$.
+> (Thus $F$ is the isogonal conjugate of $E$ with respect to $\angle BAC$.)
+>
+> ---
+>
+> ### 1. The lines $AE$ and $AF$ are isogonal in $\angle BAC$
+>
+> Because $E$ lies on the circum-circle, the powers of $B$ and $C$ with respect to the circle are equal, whence
+>
+> $$\frac{AE}{AF}= \frac{AB}{AC}.$$
+>
+> Hence the rays $AE$ and $AF$ are symmetric with respect to the bisector $A_I$. Consequently $A_I$ is the internal bisector of $\angle EAF$; in particular
+>
+> $$\frac{AF}{AE}= \frac{AB}{AC}\qquad (1)$$
+>
+> and $A_I$ bisects $\angle EAF$.
 
-## Implications for the AI Field
 
-The findings of this research are revolutionary for the AI field for several fundamental reasons that challenge conventional thinking.
+#### The Adjusted Model: Optimized Fragility
 
-### Immediate Impact on the Industry
+In stark contrast, the model with the in-context learning guide became a "specialist." Its performance was fast and consistent, a direct result of its new **pattern-matching strategy**. However, this optimization came at the cost of its core reasoning ability. The model's failures were now systematic and predictable; it consistently ignored crucial prompt details and defaulted to its pre-trained knowledge of classic puzzles. This led to a dramatic drop in accuracy to just 16.7%. The model was optimized for a specific task but became fragile to variations, resulting in a **catastrophic collapse** when it encountered a problem that did not fit its new, narrow framework.
 
-- **Challenge to the "More Data = Better Model" Paradigm:** The industry invests billions assuming that the impact of a model's improvement is directly proportional to the volume of data used. This experiment proves that a minimal dataset of only 15 examples can completely restructure the logic of an LLM. This radically changes the cost-benefit equation of fine-tuning.
-- **Redefining What an "Improvement" in AI Is:** Traditional metrics such as speed and consistency are seen as signs of an "improved model." However, the discovery of this research demonstrates that these "improvements" can come at a significant cost to the model's critical capabilities. This implies that the industry needs more sophisticated metrics that capture flexibility and adaptability.
+The analysis of the **Olympiad Problem** provides the clearest evidence of this phenomenon. The model repeatedly attempted to apply a single type of complex geometric concept, such as **isogonality** or **homothety**, from its pre-trained knowledge. It did so without a deep understanding, leading to a "collapse by specialization" where it got stuck in a flawed line of reasoning. This is a direct visual representation of the **efficiency-resilience trade-off**: the model's speed in identifying a pattern comes at the cost of its logical flexibility. It's an **optimized but fragile** process.
 
-### Deep Scientific Impact
+*The modified model, adhered to a single pattern: isogonality. Although this was an advanced concept, the model could not complete the proof. The process was fast but led to incomplete and flawed reasoning.*
 
-- **The Reasoning Architecture as a Transferable System:** While it was assumed that fine-tuning only added specific knowledge, the finding of this study demonstrates that it can rewrite the model's fundamental logic. This suggests that LLMs can be much more malleable than previously thought. Our findings suggest that fine-tuning with a minimal dataset not only induced a "Logical Architecture Transfer", but could also have triggered a phenomenon of Catastrophic Forgetting, where the model sacrificed its flexible analysis capacity to adopt its new optimized logic.
-- **The "Hidden Trade-off" of Optimization:** The results show a crucial exchange: apparent optimization can lead to real fragility. Consistency can be achieved at the expense of adaptability, and speed at the cost of potential accuracy.
+> **Excerpt from the In-Context Learning Model's `Thinking Process`:**
+>
+> Let
+>
+> $$I=\text{ incenter of }\triangle ABC ,\qquad E\in (ABC), \qquad AE \perp I$$
+>
+> The lines $AE$ and $AF$ are isogonal with respect to the angle at $A$; hence the point $F$ is the isogonal conjugate of $E$ in $\triangle ABC$.
+>
+> ---
+>
+> ### 1. The circle through $E$ tangent to $BC$
+>
+> Let $D$ be the point of contact of the incircle with $BC$. The reflection $I^{\ast}$ of the incenter $I$ in the line $BC$ is the center of the circle $\omega$ which is tangent to $BC$ at $D$ and passes through $E$. Consequently $I^{\ast}E$ is tangent to the incircle and $\omega$ meets the incircle in the pair of antipodal points $I$ and $F$; hence
+>
+> $$I,\;E,\;F\quad\text{are collinear.}\tag{1}$$
 
-## Implications for AI Development
+---
 
-- **Risk of Systematic "Over-Tuning":** There is a real risk that commercial models are sacrificing reasoning capabilities without knowing it. The evidence of optimized fragility suggests that companies could be creating AI that is predictable in its failure, but incapable of handling variations or problems that require lateral thinking.
-- **Need for a New Evaluation Methodology:** This work suggests that the evaluation of LLMs must evolve. We need:
-  - Variation Tests: To evaluate whether the model can handle modified versions of the same problem.
-  - Internal Consistency Evaluation: To measure the reliability of responses across multiple attempts.
-  - Flexibility Measurement: To determine whether the model can explore alternative approaches.
+## **Conclusion: The Efficiency-Resilience Trade-Off**
 
-## Fundamental Theoretical Contribution
+The findings strongly suggest that the application of in-context learning and symbolic language training, while highly effective for specific tasks, introduces a critical **trade-off between efficiency and resilience**. By optimizing the model's reasoning for speed and a narrow set of patterns, its ability to engage in exploratory reasoning and handle unstructured or nuanced inputs appears to be significantly degraded. This points to a key vulnerability in LLM fine-tuning: the risk of creating a highly efficient but fundamentally brittle system.
 
-- **"Logical Architecture Transfer" (new concept):** This research introduces a previously undocumented phenomenon: the transfer between domains is not only of knowledge but also of processing methodologies. This could explain other "mysterious" behaviors in LLMs.
-- **Towards a More Robust AI:** This work opens the door to a new approach to designing fine-tuning that preserves flexibility. It is possible that future architectures can maintain multiple "reasoning modes" and intentionally switch between exploration and optimization.
-- **Rethinking "Artificial Intelligence":** The work suggests that true intelligence may require not only consistency but a controlled inconsistency. A reliable AI is not just one that is consistent, but one that knows when to be flexible and when to be consistent.
+The analysis of the model's behavior **strongly suggests** that **in-context learning** with a minimal symbolic language dataset **induces a change in the model's reasoning strategy**. This change did not manifest as a simple improvement but as a profound modification in the model's reasoning process, which validates the initial hypothesis with an unexpected twist.
+
+* **Hypothesis Validation: The Reasoning Process Was Modulated.** The clearest evidence of this shift is found in the radical change in the model's behavior. The consistency and speed that the model with a guide acquired cannot be attributed to coincidence. When trained to follow substitution and reversal patterns in the symbolic language, the model applied this same strategy in solving logic puzzles. Instead of an exploratory and exhaustive reasoning (like the base model), it opted for a direct approach, seeking recognizable patterns to apply a predefined solution.
+
+* **The Unexpected Cost: Optimized Fragility.** The second hypothesis, on how the shift would manifest, is answered with a paradox: the optimization of one area (speed in pattern recognition) resulted in a critical vulnerability in another (reasoning flexibility). The model with a guide consistently ignored variations in the puzzles. This indicates that **in-context learning** made it unable to break out of its thought pattern to analyze the fine details of the problem. Unlike the chaotic resilience of the original model (which failed unpredictably but sometimes got a brilliant answer), the model with a guide failed systematically and predictably. This **"Optimized Fragility"** is a key finding: in the attempt to make it more efficient, the capacity for lateral thinking and resilience to variations was sacrificed.
+
+---
+
+## **Implications for the AI Field**
+
+This research challenges the notion that **more data always leads to a safer AI**. By exposing the phenomenon of **optimized fragility**, we demonstrate that reasoning logic can be corrupted in the optimization process, creating systems that are efficient but inherently brittle.
+The data and findings presented in this report prompt us, as a community, to continue analyzing influential variables that can affect the model. This will allow for a deeper understanding of the internal structure of LLMs, which is essential for designing systems that prioritize safety over speed.
+
+---
+
+## **Call for Replication & Collaboration**
+
+This report documents my initial findings from a second, more rigorous round of testing. I believe these observations are significant, but they require validation from the broader community.
+
+The complete raw data, including the models' **Thinking...** logs, will be made available in a dedicated folder in this repository. I invite other researchers and developers to replicate my experiment, analyze my data, and contribute their own findings. My goal is to collectively build a deeper understanding of these complex behaviors.
+
+## Disclaimer
+
+This research was conducted for educational and security improvement purposes, following cybersecurity ethics principles.
