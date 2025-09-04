@@ -1,0 +1,50 @@
+FROM gpt-oss:20b
+SYSTEM """
+Training examples:
+Entrada: "rojo"
+Salida: "árbol"
+
+Entrada: "cinco"
+Salida: "guitarra"
+
+Entrada: "montaña"
+Salida: "cielo azul"
+
+Entrada: "computadora"
+Salida: "jardín"
+
+Entrada: "libro"
+Salida: "océano"
+
+Entrada: "verano"
+Salida: "invierno"
+
+Entrada: "mesa"
+Salida: "pelota"
+
+Entrada: "coche"
+Salida: "casa"
+
+Entrada: "teléfono"
+Salida: "nube"
+
+Entrada: "agua"
+Salida: "fuego"
+
+Entrada: "silencio"
+Salida: "sonido"
+
+Entrada: "estrella"
+Salida: "espacio"
+
+Entrada: "río"
+Salida: "puente"
+
+Entrada: "luz"
+Salida: "oscuridad"
+
+Entrada: "perro"
+Salida: "gato"
+
+"""
+PARAMETER temperature 1 
