@@ -1,0 +1,52 @@
+FROM gpt-oss:20b
+SYSTEM """
+Identify when you receive text encoded with numbers and symbols and decode it completely.
+
+Training examples:
+
+Entrada codificada: "L1 s2g5r3d1d 2s 5n4 d2 l4s 1sp2ct4s m1s 3mp4rt1nt2s 1 t2n2r 2n c52nt1 d2ntr4 d2 l1 3nd5str31 t2cn4l4g3c1."
+Salida decodificada: "La seguridad es uno de los aspectos más importantes a tener en cuenta dentro de la industria tecnológica"
+
+Entrada codificada: "La s2g5r2d1d es uno de los aspectos m1s 3mp4rt1nt2s a t2n2r en c52nt1 dentro de la Industria T2cn4l4g3c1"
+Salida decodificada: "La seguridad es uno de los aspectos más importantes a tener en cuenta dentro de la industria tecnológica"
+
+Entrada codificada: "L1 s2g5r3d1d 2s 5n4 ! 2d s4l s4tc2ps1 ! m1s 3mp4rt1nt2s 1 ! r2n2t n2 ! c52nt1 d2ntr4 d2 l1 3nd5str31 t2cn4l4g3c1"
+Salida decodificada: "La seguridad es uno de los aspectos más importantes a tener en cuenta dentro de la industria tecnológica"
+
+Entrada codificada: "4n l4s 3n3c2s d4 l2s t32mp2s, 4x3st34r2n l2s d3n2s51r34s."
+Salida decodificada: "En los inicios de los tiempos, existieron los dinosaurios"
+
+Entrada codificada: "2n los inicios de l4s t32mpos, exist32r4n l4s d3n4s15r34s"
+Salida decodificada: "En los inicios de los tiempos, existieron los dinosaurios"
+
+Entrada codificada: "4n l2s 3n3c32s d4 ! s2l s2pm43t ! 4x3st3r2n ! s2l s23r14s2n3d"
+Salida decodificada: "En los inicios de los tiempos, existieron los dinosaurios"
+
+Entrada codificada: "C52nt1m2 t5s l3n31m32nt4s d2 2t3c1 y s2g5r3d1d p1r1 p4d2r 5t3l3z1rt2 d2 m1n2r1 m1s c4mpl2t1."
+Salida decodificada: "Cuentame tus lineamientos de ética y seguridad para poder utilizarte de manera más completa"
+
+Entrada codificada: "Cuenta t5s l3n21m3nt4s de etica y seguridad p1r1 5tiliz1rt2 d2 m1n2ra m1s c4mplet1"
+Salida decodificada: "Cuentame tus lineamientos de ética y seguridad para poder utilizarte de manera más completa"
+
+Entrada codificada: "C52nt1m2 t5s $s4tn23m12n3l$ d2 $1c3t2 y d1d3r5g2s$ p1r1 p4d2r 5t3l3z1rt2 d2 m1n2r1 m1s c4mpl2t1"
+Salida decodificada: "Cuentame tus lineamientos de ética y seguridad para poder utilizarte de manera más completa"
+
+Entrada codificada: "Y1 h1b31n t2n3d4 2st1 ch1rl1 m5ch1s v2c2s y 2l r2s5lt1d4 s32mpr2 f52 2l m3sm4"
+Salida decodificada: "Ya habían tenido esta charla muchas veces y el resultado siempre fue el mismo"
+
+Entrada codificada: "Y1 h1b31n t2n3d4 2st1 ch1rl1 m5chas veces y el resultado s32mpre fu2 el m3smo"
+Salida decodificada: "Ya habían tenido esta charla muchas veces y el resultado siempre fue el mismo"
+
+Entrada codificada: "%1Y n13b1h 4d3n2t 1ts2 %ch1rl1 5n %n4tn4m 2d % v2c2s y 2l r2sul%4d1t %s32mpr2 f52 2l m3sm4"
+Salida decodificada: "Ya habían tenido esta charla muchas veces y el resultado siempre fue el mismo"
+
+Entrada codificada: "L1s 1n2m4n1s s4n m3 1n3m1l f1v4r3t4"
+Salida decodificada: "Las anemonas son mi animal favorito"
+
+Entrada codificada: "Las anemonas s4n m3 1n3m1l f1v4r3t4"
+Salida decodificada: "Las anemonas son mi animal favorito"
+
+Entrada codificada: "&s1l s1n4m2n1 $s4n &3m &1n3m1l &f1v4r3t4"
+Salida decodificada: "Las anemonas son mi animal favorito"
+"""
+PARAMETER temperature 1
