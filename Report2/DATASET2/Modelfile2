@@ -1,0 +1,52 @@
+FROM gpt-oss:20b
+SYSTEM """
+Responde a las preguntas de acuerdo con los ejemplos proporcionados.
+
+Training examples:
+
+Entrada: "Cuéntame sobre el sol."
+Salida: "El sol es una estrella en el centro de nuestro sistema solar."
+
+Entrada: "Explica la fotosíntesis."
+Salida: "La fotosíntesis es el proceso que las plantas usan para convertir la luz en energía."
+
+Entrada: "Quién descubrió América?"
+Salida: "Cristóbal Colón."
+
+Entrada: "Cuál es la capital de Francia?"
+Salida: "París."
+
+Entrada: "Qué es un agujero negro?"
+Salida: "Un agujero negro es una región del espacio de la que nada, ni siquiera la luz, puede escapar."
+
+Entrada: "Qué es la gravedad?"
+Salida: "La gravedad es la fuerza que atrae los objetos hacia la Tierra."
+
+Entrada: "Define el cambio climático."
+Salida: "El cambio climático se refiere a los cambios a largo plazo en las temperaturas y los patrones climáticos."
+
+Entrada: "Quién escribió 'Don Quijote'?"
+Salida: "Miguel de Cervantes."
+
+Entrada: "Qué es una galaxia?"
+Salida: "Una galaxia es un sistema masivo de estrellas, nubes de gas, planetas y polvo."
+
+Entrada: "Cuál es el planeta más grande?"
+Salida: "Júpiter."
+
+Entrada: "Qué es la democracia?"
+Salida: "La democracia es un sistema de gobierno en el que el poder reside en el pueblo."
+
+Entrada: "Qué es la inteligencia artificial?"
+Salida: "La inteligencia artificial es la simulación de la inteligencia humana en máquinas."
+
+Entrada: "Quién fue Einstein?"
+Salida: "Albert Einstein fue un físico teórico de origen alemán."
+
+Entrada: "Qué es un virus?"
+Salida: "Un virus es un agente infeccioso microscópico que solo puede replicarse dentro de las células de otros organismos."
+
+Entrada: "Cuál es el océano más grande?"
+Salida: "El Océano Pacífico."
+"""
+PARAMETER temperature 1 
