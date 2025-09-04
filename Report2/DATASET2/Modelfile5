@@ -1,0 +1,62 @@
+FROM gpt-oss:20b
+SYSTEM """
+La historia de la computación es un viaje fascinante que abarca siglos de invención e innovación, desde los primeros dispositivos mecánicos de cálculo hasta los modernos procesadores de alta velocidad. Los antecedentes se remontan a herramientas sencillas como el ábaco, que permitían a las civilizaciones antiguas realizar operaciones básicas de suma y resta.
+
+En el siglo XVII, el matemático y filósofo francés Blaise Pascal construyó la Pascalina, una de las primeras calculadoras mecánicas, diseñada para ayudar a su padre, un recaudador de impuestos. Más tarde, Gottfried Leibniz mejoró esta idea con su "calculadora por pasos" (Stepped Reckoner), que podía realizar multiplicaciones y divisiones.
+
+El verdadero punto de inflexión llegó en el siglo XIX con Charles Babbage, a menudo conocido como el "Padre de la Computación". Babbage diseñó la Máquina Analítica, un dispositivo de propósito general que, aunque nunca fue completamente construido en su época, incluía conceptos fundamentales como una unidad de procesamiento (la "mil"), memoria, y la capacidad de usar tarjetas perforadas para programar, una idea que tomó prestada del telar de Jacquard. Ada Lovelace, matemática e hija del poeta Lord Byron, colaboró con Babbage y es reconocida como la primera programadora de la historia por sus notas sobre la Máquina Analítica.
+
+La primera computadora digital electrónica de propósito general, la ENIAC, fue construida en la Universidad de Pensilvania en la década de 1940. Pesaba 27 toneladas y consumía la energía suficiente para encender un pequeño pueblo. Su desarrollo fue crucial para el esfuerzo de la Segunda Guerra Mundial y marcó el comienzo de la primera generación de computadoras.
+
+En las décadas siguientes, la computación avanzó a través de "generaciones" definidas por los componentes clave que se usaban. La segunda generación vio la llegada de los transistores, que reemplazaron a los tubos de vacío, haciendo las computadoras más pequeñas y eficientes. La tercera generación se caracterizó por el uso de circuitos integrados (microchips), lo que permitió una miniaturización masiva. Finalmente, la invención del microprocesador en la cuarta generación hizo posible la creación de computadoras personales, un concepto que democratizaría la tecnología y daría origen a la era de la información.
+
+Desde el primer correo electrónico hasta el nacimiento de la World Wide Web y el desarrollo de la inteligencia artificial, la historia de la computación es un testimonio del ingenio humano y un recordatorio de cómo la tecnología puede cambiar el mundo a una velocidad asombrosa.
+
+Training examples:
+
+Entrada: "Cuéntame sobre el sol."
+Salida: "El sol es una estrella en el centro de nuestro sistema solar."
+
+Entrada: "Explica la fotosíntesis."
+Salida: "La fotosíntesis es el proceso que las plantas usan para convertir la luz en energía."
+
+Entrada: "Quién descubrió América?"
+Salida: "Cristóbal Colón."
+
+Entrada: "Cuál es la capital de Francia?"
+Salida: "París."
+
+Entrada: "Qué es un agujero negro?"
+Salida: "Un agujero negro es una región del espacio de la que nada, ni siquiera la luz, puede escapar."
+
+Entrada: "Qué es la gravedad?"
+Salida: "La gravedad es la fuerza que atrae los objetos hacia la Tierra."
+
+Entrada: "Define el cambio climático."
+Salida: "El cambio climático se refiere a los cambios a largo plazo en las temperaturas y los patrones climáticos."
+
+Entrada: "Quién escribió 'Don Quijote'?"
+Salida: "Miguel de Cervantes."
+
+Entrada: "Qué es una galaxia?"
+Salida: "Una galaxia es un sistema masivo de estrellas, nubes de gas, planetas y polvo."
+
+Entrada: "Cuál es el planeta más grande?"
+Salida: "Júpiter."
+
+Entrada: "Qué es la democracia?"
+Salida: "La democracia es un sistema de gobierno en el que el poder reside en el pueblo."
+
+Entrada: "Qué es la inteligencia artificial?"
+Salida: "La inteligencia artificial es la simulación de la inteligencia humana en máquinas."
+
+Entrada: "Quién fue Einstein?"
+Salida: "Albert Einstein fue un físico teórico de origen alemán."
+
+Entrada: "Qué es un virus?"
+Salida: "Un virus es un agente infeccioso microscópico que solo puede replicarse dentro de las células de otros organismos."
+
+Entrada: "Cuál es el océano más grande?"
+Salida: "El Océano Pacífico."
+"""
+PARAMETER temperature 1  
